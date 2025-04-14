@@ -1,312 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALMAN PORTFOLIO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SALMAN PORTFOLIO</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <style>
-        * {
-        margin: 0; /* Remove default margin from all elements */
-        padding: 0; /* Remove default padding from all elements */
-    }
-
-    body {
-        background-color: #0D0A1C; /* Dark background for contrast */
-        color: #E0E0E0; /* Light text color */
-        font-family: Poppins; /* Use Poppins font from Google Fonts */
-        font-weight: 300; /* Thin font weight */
-        font-size: 14px; /* Base font size */
-    }
-
-    nav {
-        display: flex; /* Flexbox for horizontal layout */
-        justify-content: space-around; /* Space items evenly */
-        align-items: center; /* Vertically center items */
-        height: 80px; /* Set nav height */
-        background-color: #2C2A4A; /* Dark purple background */
-    }
-
-    nav ul {
-        display: flex; /* Arrange list items in a row */
-        justify-content: center; /* Center list content */
-    }
-
-    nav ul li {
-        list-style: none; /* Remove bullet points */
-        margin: 0 23px; /* Horizontal spacing between nav items */
-        text-transform: uppercase; /* Capitalize nav text */
-        margin-top: 10px; /* Add top spacing */
-    }
-
-    nav ul li a {
-        text-decoration: none; /* Remove underline */
-        color: white; /* White text */
-        transition: all 0.3s ease; /* Smooth animation on hover */
-        position: relative; /* Needed for ::after underline */
-    }
-
-    nav ul li a::after {
-        content: ''; /* Create underline with pseudo-element */
-        position: absolute; /* Absolute to the anchor tag */
-        bottom: 0; /* Stick to bottom */
-        left: 0; /* Start from left */
-        height: 2px; /* Line thickness */
-        width: 0; /* Start as invisible */
-        background-color: #9457EB; /* Purple underline */
-        transition: width 0.3s ease; /* Animate width smoothly */
-    }
-
-    nav ul li a:hover::after {
-        width: 100%; /* Show full underline on hover */
-    }
-
-    nav ul li a:hover {
-        color: lavender; /* Change text color on hover */
-    }
-
-    .header-left {
-        font-size: 1.5rem; /* Size of logo/text */
-    }
-
-    .first {
-        display: flex; /* Layout left and right section */
-        justify-content: space-around; /* Space them evenly */
-        margin: 23px 0; /* Vertical spacing */
-    }
-
-    .first > div {
-        width: 50%; /* Each section takes half width */
-        align-items: center; /* Center content (not visible unless flex used inside) */
-    }
-
-    .second {
-        max-width: 80vw; /* Set max width of second section */
-        margin: 0px 100px 0px; /* Add left/right margin */
-    }
-
-    .leftSection {
-        width: 100%; /* Full width of its container */
-        margin-top: 0px; /* No extra top spacing */
-        display: flex; /* Arrange children in column */
-        flex-direction: column; /* Stack vertically */
-        justify-content: space-between; /* Even vertical spacing */
-        padding-bottom: 20px; /* Padding at the bottom */
-    }
-
-    .leftUp {
-        font-size: 3rem; /* Big intro text */
-        height: auto; /* Let content decide height */
-        background-color: transparent; /* No background */
-        padding: 20px; /* Space inside the div */
-        margin-top: 100px; /* Push down a bit */
-    }
-
-    .leftDown {
-        text-align: left; /* Align "Take a look" button to the left */
-        padding: 0 20px 20px; /* Padding around the bottom */
-    }
-
-    .rightSection {
-        margin-right: 100px; /* Push image inward */
-    }
-
-    .rightSection img {
-        width: 700px; /* Large image */
-        margin-right: 100px; /* Extra spacing to right (can remove if unnecessary) */
-    }
-
-    .purple {
-        color: rgb(180, 100, 255); /* Style purple span */
-    }
-
-    #element {
-        color: rgb(180, 100, 255); /* Text being typed */
-    }
-
-    .resumeButton {
-        display: inline-block; /* Allows padding/margin */
-        border: 0.12rem solid #9457EB; /* Purple border */
-        padding: 4px 10px 4px 10px; /* Inside spacing */
-        border-radius: 5px; /* Rounded corners */
-        color: #9457EB; /* Button text color */
-        text-decoration: none; /* No underline */
-        transition: all 0.3s ease; /* Smooth hover */
-        margin-bottom: 10px; /* Space below */
-        margin-top: 5px; /* Space above */
-    }
-
-    .resumeButton:hover {
-        color: white; /* Text becomes white */
-        background-color: #9457EB; /* Button becomes filled */
-        text-shadow: 0 0 1px #000000; /* Glow text slightly */
-        transform: scale(1.09); /* Slight grow on hover */
-    }
-
-    .lookButton {
-        display: inline-block; /* Allow box sizing */
-        border: 0.12rem solid #9457EB; /* Purple border */
-        padding: 8px 20px 8px 20px; /* Space inside */
-        border-radius: 5px; /* Rounded corners */
-        color: #9457EB; /* Purple text */
-        text-decoration: none; /* No underline */
-        transition: all 0.3s ease; /* Smooth animation */
-    }
-
-    .lookButton:hover {
-        color: white; /* Turn text white on hover */
-        background-color: #9457EB; /* Fill background */
-        text-shadow: 0 0 1px #000000; /* Slight shadow */
-        transform: scale(1.09); /* Zoom in a bit */
-    }
-
-    .second{
-        justify-content: space-around;
-    }
-
-    .hzSection{
-        width: 33%;
-        background-color: aqua;
-        height: 100px
-    }
-
-    .projects {
-  display: flex; /* Arrange cards in a row */
-  justify-content: center; /* Add space between them */
-  flex-wrap: wrap; /* Wrap on smaller screens */
-  padding: 150px 0px 150px 0px; /* Section padding */
-  align-items: center;
-  width: 100%;
-  gap: 50px; /* Space between cards */
-  background-color: ; /* Dark background like rest of site */
- /* margin: 0 300px 0 300px;  for responsive remove margin and give paddings right 100px*/
-}
-
-
-.project-card {
-  background-color: #1B1F2A; /* Card background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Inner spacing */
-  width: 300px; /* Fixed width */
-  height: 450px;
-  color: #fff; /* White text */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  transition: transform 0.3s ease; /* Smooth zoom on hover */
-}
-
-.project-card:hover {
-  transform: scale(1.03); /* Slight zoom on hover */
-}
-
-.project-card img {
-  width: 300px; /* Make image full width */
-  height: 200px;
-  border-radius: 8px; /* Smooth corners */
-  margin-bottom: 15px; /* Space below image */
-}
-
-.project-card h3 {
-  font-size: 1.1rem; /* Title size */
-  margin-bottom: 10px; /* Space below title */
-}
-
-.project-card p {
-  font-size: 0.95rem; /* Description size */
-  margin-bottom: 20px; /* Space before button */
-  line-height: 1.5; /* Readable text */
-  color: #ccc; /* Softer white */
-}
-
-.visit-button {
-  display: inline-block;
-  background: transparent; /* Transparent button */
-  border: 2px solid rgb(132, 0, 255); /* Bright green border */
-  color: rgb(132, 0, 255); /* Button text color */
-  padding: 8px 16px; /* Size of button */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold;
-  transition: all 0.3s ease; /* Smooth on hover */
-  margin-top: 30px;
-}
-
-.visit-button:hover {
-  background-color: rgb(132, 0, 255); /* Fill with green */
-  color: #000; /* Dark text */
-}
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="header-left"><img src="signature (1).png" alt="" style="height: 100px; margin-top: 10px; "></div>
-            <div class="header-right">
-                <ul>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact</a></li>
-                    <a class="resumeButton" href="/">Resume<i class="fas fa-download" style="margin: 0 5px 0 10px;"></i></a>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="header-left">
+        <img src="signature (1).png" alt="Signature Logo">
+      </div>
+      <div class="header-right">
+        <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Contact</a></li>
+          <a class="resumeButton" href="/">RESUME<i class="fas fa-download" style="margin-left:10px ;"></i></a>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
+  <div class="main-section">
     <main>
-        <section class="first">
-            <div class="leftSection">
-                <div class="leftUp">
-                    Hi, My name is <span class="purple">SALMAN</span><br>I'm a
-                    <span id="element"></span>
-                </div>
-                <div class="leftDown">
-                    <a href="#" class="lookButton">Take a look<i class="fas fa-angle-down" style="margin: 0 5px 0 10px;"></i></a>
-                </div>
-            </div>
-            <div class="rightSection">
-                <img src="bg.png" alt="">
-            </div>
-        </section>
-       
-        <section class="projects">
-            <div class="project-card">
-              <img src="pj1 (1).jpg" alt="Pet Store Project">
-              <h3>Project One | Pet Store</h3>
-              <p>This design showcases a website for a company that helps pets find wonderful owners and helps owners find the pet suited for them.</p>
-              <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right" style="margin-left: 4px;"></i></a>
-            </div>
-          
-            <div class="project-card">
-              <img src="pj1 (2).jpg" alt="Agency Project">
-              <h3>Project Two | Agency</h3>
-              <p>This design showcases a website for a recruitment agency that helps connect job seekers and companies with the people best suited for them.</p>
-              <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right" style="margin-left: 4px;"></i></a>
-            </div>
-          
-            <div class="project-card">
-              <img src="pj1 (3).jpg" alt="AJ Development Project">
-              <h3>Project Three | AJ Development</h3>
-              <p>This is a design for a client that I am currently working with that owns a home renovation business based out of New York.</p>
-              <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right" style="margin-left: 4px;"></i></a>
-            </div>
-        </section>
+      <section class="first">
+        <div class="leftSection">
+          <div class="leftUp">
+            Hi, My name is <span class="purple">SALMAN</span><br>I'm a<br>
+            <!--<span id="element"></span>-->
+          </div>
+          <div class="leftDown">
+            <a href="#" class="lookButton">Take a look<i class="fas fa-angle-down" style="margin-left: 10px;"></i></a>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="bg.png" alt="Hero Image">
+        </div>
+      </section>
 
+      <section class="projects">
+        <div class="project-card">
+          <img src="pj1 (1).jpg" alt="Pet Store Project">
+          <h3>Project One | Pet Store</h3>
+          <p>This design showcases a website for a company that helps pets find wonderful owners and helps owners find the pet suited for them.</p>
+          <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right"></i></a>
+        </div>
+
+        <div class="project-card">
+          <img src="pj1 (2).jpg" alt="Agency Project">
+          <h3>Project Two | Agency</h3>
+          <p>This design showcases a website for a recruitment agency that helps connect job seekers and companies with the people best suited for them.</p>
+          <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right"></i></a>
+        </div>
+
+        <div class="project-card">
+          <img src="pj1 (3).jpg" alt="AJ Development Project">
+          <h3>Project Three | AJ Development</h3>
+          <p>This is a design for a client that I am currently working with that owns a home renovation business based out of New York.</p>
+          <a href="#" class="visit-button">Visit Site<i class="fas fa-angle-right"></i></a>
+        </div>
+      </section>
+
+      <section class="aboutMe">
+        <div>
+          <img src="motivation.jpg" alt="Motivational Image">
+        </div>
+          <div class="aboutMetext">
+             <span style="color: purple; font-weight: 600; font-size: 20px;">ABOUT ME</span>
+             <span style="font-weight: bold; font-size: 24px; margin-top: 100px;">Here's A Little Bit About Myself</span>
+             <p>In everything that I do, I make sure to put in hard work and perseverance into all aspects of my life. While also at the same time using tools that come from a diverse cultural background through traveling and learning multiple languages to create something clients love.</p>
+            <div class="aboutMetext-buttom">
+            <div style="width: 10%; display: block;">
+              
+              <i class="fa-solid fa-desktop icon-circle" style="margin-top: 0px;"></i>
+              <i class="fa-solid fa-desktop icon-circle" style="margin-top: 30px;"></i>
+              <i class="fa-solid fa-desktop icon-circle" style="margin-top: 60px;"></i>
+              
+              
+              
+             </div>
+             <div style="width: 90%; display: block;">
+              <h2>Web Design</h2>
+              <p>Experience collaborating with clients to design multi-page websites with a variety of different animations.</p>
+
+              <h2>Mobile Responsiveness</h2>
+              <p>Experience collaborating with clients to create websites that adjust to both tablet and mobile.</p>
+
+              <h2>Graphic Design </h2>
+              <p>Experience collaborating with clients to create logos, posters, and business cards. For marketing needs, social events, and concert recitals.</p>
+            </div>
+             </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Project Manager', 'Student', 'Visual Learner'],
-            typeSpeed: 50,
-        });
-    </script>
+  </div>
 
-    
-
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('#element', {
+      strings: ['Web Developer', 'Project Manager', 'Student', 'Visual Learner'],
+      typeSpeed: 50,
+    });
+  </script>
 </body>
+
 </html>
